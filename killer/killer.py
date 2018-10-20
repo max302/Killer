@@ -57,6 +57,9 @@ def get_killer(args):
     elif WINDOWS:
         from killer.killer_windows import KillerWindows
         return KillerWindows(config_path=args.config, debug=args.debug)
+    elif BSD:
+        from killer.killer_bsd import killer_BSD
+        return KillerBSD(config_path=args.config, debug=args.debug)
     else:
         raise NotImplementedError
 
